@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: Rockwell;
+}
+nav{
+    background: black;
+    height: 80px;
+    width: 100%;
+}
+.menupunkter{
+    float: right;
+    margin-right: 20px;
+}
+.menupunkter li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+.menupunkter li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    text-transform: uppercase;
+}
+.menupunkter a:hover{
+    color: orange;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media (max-width: 430px){
+    .menupunkter li a{
+        font-size: 30px;
+    }
+    .checkbtn{
+        display: block;
+    }
+    .menupunkter{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 80px;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    .menupunkter a:hover{
+        background: none;
+        color: orange;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
