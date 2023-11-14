@@ -9,12 +9,20 @@ body{
     font-family: Rockwell;
 }
 nav{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
     background: black;
     height: 80px;
     width: 100%;
 }
+nav img{
+    height: 80px;
+    width: auto;
+    margin: 0 auto;
+}
 .menupunkter{
-    float: right;
     margin-right: 20px;
 }
 .menupunkter li{
@@ -35,7 +43,6 @@ nav{
 .checkbtn{
     font-size: 30px;
     color: white;
-    float: right;
     line-height: 80px;
     margin-right: 40px;
     cursor: pointer;
@@ -44,7 +51,46 @@ nav{
 #check{
     display: none;
 }
+
+@media (max-width: 1024px){
+    nav img{
+        margin-left: 47%;
+    }
+    .menupunkter li a{
+        font-size: 50px;
+    }
+    .menupunkter li{
+        margin-bottom: 100px;
+    }
+    .checkbtn{
+        display: block;
+    }
+    .menupunkter{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    .menupunkter a:hover{
+        background: none;
+        color: orange;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+
 @media (max-width: 430px){
+    nav img{
+        margin-left: 40%;
+    }
     .menupunkter li a{
         font-size: 30px;
     }
@@ -55,7 +101,6 @@ nav{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: 80px;
         position: fixed;
         width: 100%;
         height: 100vh;
